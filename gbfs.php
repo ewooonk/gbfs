@@ -4,18 +4,6 @@ function gbfs()
 
 {
 
-$myObj->system_id = "CKL";
-$myObj->language = "en";
-$myObj->name = "Cykl";
-$myObj->short_name = "Cykl";
-$myObj->operator = "Cykl";
-$myObj->url = "https://www.cykl.nl/";
-$myObj->purchase_url = "https://www.cykl.nl/";
-$myObj->start_date = "2017-07-01";
-$myObj->phone_number = "+316-208-554-89";
-$myObj->email = "support@cykl.nl";
-$myObj->timezone = "Europe/Amsterdam";
-
 $system_information->name = "system_information";
 $system_information->url = "https://www.cykl.nl/gbfs/en/system_information.json";
 $station_information->name = "station_information";
@@ -26,7 +14,6 @@ $system_pricing_plans->name = "system_pricing_plans";
 $system_pricing_plans->url = "https://www.cykl.nl/gbfs/en/system_pricing_plans.json";
 
 $en-> feeds = array($system_information,$station_information,$station_status,$system_pricing_plans);
-$myJSON = json_encode($myObj);
 $data-> en = $en;
 
 $theObj->ttl = 60;
