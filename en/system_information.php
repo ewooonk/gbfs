@@ -4,38 +4,38 @@ function system_information ()
 {
     
 
-$myObj->system_id = "CKL";
-$myObj->language = "en";
-$myObj->name = "Cykl";
-$myObj->short_name = "Cykl";
-$myObj->operator = "Cykl";
-$myObj->url = "https://www.cykl.nl/";
-$myObj->purchase_url = "https://www.cykl.nl/";
-$myObj->start_date = "2017-07-01";
-$myObj->phone_number = "+316-208-554-89";
-$myObj->email = "support@cykl.nl";
-$myObj->timezone = "Europe/Amsterdam";
-$myObj->type_of_system = "virtual_station_based";
+$datObj->system_id = "CKL";
+$datObj->language = "en";
+$datObj->name = "Cykl";
+$datObj->short_name = "Cykl";
+$datObj->operator = "Cykl";
+$datObj->url = "https://www.cykl.nl/";
+$datObj->purchase_url = "https://www.cykl.nl/";
+$datObj->start_date = "2017-07-01";
+$datObj->phone_number = "+316-208-554-89";
+$datObj->email = "support@cykl.nl";
+$datObj->timezone = "Europe/Amsterdam";
+$datObj->type_of_system = "virtual_station_based";
 
-$myJSON = json_encode($myObj);
+$datJSON = json_encode($datObj);
 
-$theObj->ttl = 60;
-$theObj->last_updated = time();
-$theObj->data = $myObj;
+$sysInfObj->ttl = 60;
+$sysInfObj->last_updated = time();
+$sysInfObj->data = $datObj;
 
-$theJSON = json_encode($theObj);
+$sysInfJSON = json_encode($sysInfObj);
 
 // echo $theJSON;
 
-json_write_system_information ($theJSON);
+json_write_system_information ($sysInfJSON);
 
 }
 
-function json_write_system_information ($theJSON)
+function json_write_system_information ($sysInfJSON)
 {
 	$database = dirname(__FILE__) . "/system_information.json";
 
-	file_put_contents($database, $theJSON);
+	file_put_contents($database, $sysInfJSON);
 }
 
 ?>
