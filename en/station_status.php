@@ -6,17 +6,17 @@ function station_status()
 
 {
 
-$myObj-> stations = mapgetmarkersgbfsstatus();
+$stationsObj-> stations = mapgetmarkersgbfsstatus();
 
-$theObj->ttl = 60;
-$theObj->last_updated = time();
-$theObj->data = $myObj;
+$statObj->ttl = 60;
+$statObj->last_updated = time();
+$statObj->data = $stationsObj;
 
-$theJSON = json_encode($theObj);
+$statJSON = json_encode($statObj);
 
 $database = dirname(__FILE__) . "/station_status.json";
 
-file_put_contents($database, $theJSON);
+file_put_contents($database, $statJSON);
 }
 
 
