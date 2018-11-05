@@ -4,24 +4,24 @@ function station_information()
 
 {
 
-$myObj-> stations = mapgetmarkersgbfsinformation();
+$stationsObj-> stations = mapgetmarkersgbfsinformation();
 
-$theObj->ttl = 60;
-$theObj->last_updated = time();
-$theObj->data = $myObj;
+$infObj->ttl = 60;
+$infObj->last_updated = time();
+$infObj->data = $stationsObj;
 
-$theJSON = json_encode($theObj);
+$infJSON = json_encode($infObj);
 
 // echo $theJSON;
-json_write_station_information ($theJSON);
+json_write_station_information ($infJSON);
 
 }
 
-function json_write_station_information ($theJSON)
+function json_write_station_information ($infJSON)
 {
 	$database = dirname(__FILE__) . "/station_information.json";
 
-	file_put_contents($database, $theJSON);
+	file_put_contents($database, $infJSON);
 }
 
 
